@@ -52,7 +52,7 @@ onBeforeUnmount(() => {
   <div class="date">{{ dateStr }}</div>
   <div class="time">{{ timeStr }}</div>
   <div id="buttons-container">
-    <button class="github-btn" @click="openGithub" title="GitHub">
+    <button class="github-btn" v-if="!isFullscreen" @click="openGithub" title="GitHub">
       <i class="bi bi-github" role="img" aria-label="GitHub"></i>
     </button>
     <button class="fullscreen-btn" v-if="!isFullscreen" @click="toggleFullScreen" title="全屏">
@@ -81,24 +81,24 @@ body {
   left: 50%;
   top: 40%;
   transform: translate(-50%, -120%);
-  font-size: 2rem;
-  letter-spacing: 2px;
+  font-size: 2.7rem;
+  letter-spacing: 3.4px;
 }
 .time {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 12rem;
-  letter-spacing: 8px;
+  font-size: 15rem;
+  letter-spacing: 10px;
 }
 #buttons-container {
   position: absolute;
-  top: 1em;
-  right: 1em;
+  top: 1.5em;
+  right: 1.5em;
   display: flex;
   flex-direction: row;
-  gap: 0.5em;
+  gap: 0.85em;
 }
 .fullscreen-btn,
 .github-btn {
@@ -106,15 +106,57 @@ body {
   background: none;
   color: oklch(84.153% .007 265.754);
   border: none;
-  padding: 10px 10px;
-  padding-bottom: 8px;
-  font-size: 1rem;
-  border-radius: 1px;
+  padding: 0.6rem 0.6rem;
+  padding-bottom: 0.25rem;
+  font-size: 1.7rem;
+  border-radius: 3px;
   cursor: pointer;
   transition: background 0.17s;
 }
 .fullscreen-btn:hover,
 .github-btn:hover {
   background: rgba(255, 255, 255, 0.15);
+}
+
+@media (min-width: 2560px) {
+  .date {
+    font-size: 3rem;
+  }
+  .time {
+    font-size: 20rem;
+    letter-spacing: 20px;
+  }
+  #buttons-container {
+    top: 2em;
+    right: 2em;
+    gap: 1em;
+  }
+  .fullscreen-btn,
+  .github-btn {
+    font-size: 2.1rem;
+    padding: 0.9rem 0.9rem;
+    border-radius: 6px;
+  }
+}
+
+@media (min-width: 3840px) {
+  .date {
+    font-size: 5rem;
+  }
+  .time {
+    font-size: 30rem;
+    letter-spacing: 30px;
+  }
+  #buttons-container {
+    top: 3em;
+    right: 3em;
+    gap: 1.5em;
+  }
+  .fullscreen-btn,
+  .github-btn {
+    font-size: 3.24rem;
+    padding: 1.68rem 1.68rem;
+    border-radius: 12px;
+  }
 }
 </style>
