@@ -51,11 +51,11 @@ onBeforeUnmount(() => {
 <template>
   <div class="date">{{ dateStr }}</div>
   <div class="time">{{ timeStr }}</div>
-  <div id="buttons-container">
-    <button class="github-btn" v-if="!isFullscreen" @click="openGithub" title="GitHub">
+  <div id="buttons-container" v-if="!isFullscreen">
+    <button class="github-btn" @click="openGithub" title="GitHub">
       <i class="bi bi-github" role="img" aria-label="GitHub"></i>
     </button>
-    <button class="fullscreen-btn" v-if="!isFullscreen" @click="toggleFullScreen" title="全屏">
+    <button class="fullscreen-btn" @click="toggleFullScreen" title="全屏">
       <i class="bi bi-arrows-fullscreen" role="img" aria-label="Fullscreen"></i>
     </button>
   </div>
@@ -79,9 +79,9 @@ body {
 .date {
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 30%;
   transform: translate(-50%, -120%);
-  font-size: 2.7rem;
+  font-size: 4rem;
   letter-spacing: 3.4px;
 }
 .time {
@@ -89,7 +89,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 15rem;
+  font-size: 25rem;
   letter-spacing: 10px;
 }
 #buttons-container {
@@ -120,10 +120,10 @@ body {
 
 @media (min-width: 2560px) {
   .date {
-    font-size: 3rem;
+    font-size: 6rem;
   }
   .time {
-    font-size: 20rem;
+    font-size: 35rem;
     letter-spacing: 20px;
   }
   #buttons-container {
@@ -141,10 +141,10 @@ body {
 
 @media (min-width: 3840px) {
   .date {
-    font-size: 5rem;
+    font-size: 10rem;
   }
   .time {
-    font-size: 30rem;
+    font-size: 55rem;
     letter-spacing: 30px;
   }
   #buttons-container {
