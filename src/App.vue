@@ -105,17 +105,18 @@ body {
   position: static;
   background: none;
   color: oklch(84.153% .007 265.754);
-  border: none;
+  border: 1px solid oklch(0% 0 0 / 0);
   padding: 0.6rem 0.6rem;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.35rem;
   font-size: 1.7rem;
-  border-radius: 3px;
+  border-radius: 1px;
   cursor: pointer;
-  transition: background 0.17s;
+  transition: background 0.17s, border-color 0.17s;
 }
 .fullscreen-btn:hover,
 .github-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: oklch(1 0 0 / 0.15);
+  border-color: oklch(84.153% .007 265.754);
 }
 
 @media (min-width: 2560px) {
